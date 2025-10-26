@@ -65,16 +65,30 @@ It reads structured resume data (skills, education, projects, internships, etc.)
 
 ## 🖨️ Usage
 
-Run the following command:
+Run the following command for backend resume:
 
 ```bash
-node resume.js
+node PythonResume.js
 ```
 
 This will generate a file:
 
 ```
-resume2.pdf
+AnumKousarPythonResume.pdf
+```
+
+in the project root folder ✅
+
+Run the following command for backend resume:
+
+```bash
+node WebResume.js
+```
+
+This will generate a file:
+
+```
+AnumKousarWebResume.pdf
 ```
 
 in the project root folder ✅

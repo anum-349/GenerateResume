@@ -5,8 +5,7 @@ const fs = require('fs');
 const resumeData = {
   name: "ANUM KOUSAR",
   field: "Software Engineer",
-  profile:
-    "Software Engineering undergraduate skilled in Python, C++, Java, and full-stack web development with React and Tailwind. Experienced in building APIs and backend systems using FastAPI, deploying applications with Docker, and developing intelligent solutions with Machine Learning and NLP. Proficient with tools like Postman, VS Code, and PyCharm, and eager to apply technical expertise and problem-solving skills to create efficient, scalable, and impactful software solutions.",
+  profile: "Creative and detail-oriented Software Engineering undergraduate with hands-on experience in developing responsive and interactive web applications using React, Tailwind, and Node.js/Express.js. Skilled in building secure RESTful APIs, managing frontend–backend integration, and deploying scalable applications with Docker. Strong foundation in JavaScript, Python, and C++, with a passion for creating clean, user-focused, and visually appealing digital experiences.",
   contacts: {
     email: "anumkousar552@gmail.com",
     phone: "+92 349 5445560",
@@ -15,10 +14,11 @@ const resumeData = {
     github: "github.com/anum-349",
   },
   technicalSkills: {
-    Languages: "Python, C++, Java, JavaScript, HTML/CSS",
-    Frameworks: "React, Tailwind, Flask, FastAPI, Express.js",
-    Tools: "Git, Docker, Postman, VS Code, PyCharm, AWS EC2, Jira, WAMP",
-    Databases: "MongoDB, MySQL, Oracle"
+    Languages: "JavaScript, Python, C++, Java, HTML, CSS",
+    Frameworks: "React, Tailwind, Node.js, Express.js, Flask",
+    Tools: "Git, Docker, Postman, VS Code, PyCharm, Jira",
+    Databases: "MongoDB, MySQL",
+    Technologies: "RESTful APIs, Frontend Development, OAuth Authentication, Mapbox Integration, UI/UX Design, Responsive Web Design"
   },
   internships: [
     {
@@ -49,47 +49,40 @@ const resumeData = {
       ],
     },
   ],
-  projects: [
-    {
-      title: "Artist Website (React, Node.js, Tailwind)",
-      date: "Ongoing",
-      details: [
-        "Developing dynamic frontend with React and Tailwind",
-        "Ensuring responsive design and secure database connections",
-      ],
-    },
-    {
-      title: "Career Guidance Chatbot (Python, ML/NLP)",
-      date: "Sep 2025",
-      details: [
-        "Trained ML model to predict career roles from user queries",
-        "Integrated chatbot with Streamlit for an interactive interface",
-      ],
-    },
-    {
-      title: "Custom Terminal/Shell (Python)",
-      date: "Jun 2025",
-      details: [
-        "Implemented shell supporting commands, piping, background jobs, file operations, system information retrieval, and process management",
-      ],
-    },
-    {
-      title: "Job Portal System (Java)",
-      date: "Jan 2025",
-      details: [
-        "Built terminal-based portal using Facade Pattern",
-        "Implemented role-based access control",
-      ],
-    },
-    {
-      title: "Library Management System (C++)",
-      date: "Nov 2023",
-      details: [
-        "Designed a system to manage book and patron information",
-        "Automated book tracking and late fee calculations",
-      ],
-    },
-  ],
+ projects: [
+  {
+    title: "MuseTales – Artist Portfolio Website",
+    date: "Oct 2025",
+    details: [
+      "Engineered a responsive artist portfolio platform, boosting page load speed by 30%.",
+      "Improved backend API performance by 25%."
+    ],
+  },
+  {
+    title: "DevPortfolio",
+    date: "Feb 2025",
+    details: [
+      "Designed an elegant developer portfolio using EJS templates.",
+      "Deployed containerized build with Docker, reducing setup time by 40%."
+    ],
+  },
+  {
+    title: "Interactive 3D Project Globe",
+    date: "Dec 2024",
+    details: [
+      "Crafted an interactive 3D globe using Three.js to visualize global project locations.",
+      "Optimized user interaction, increase engagement time by 35%."
+    ],
+  },
+  {
+    title: "Stock Screener App",
+    date: "Oct 2024",
+    details: [
+      "Developed a real-time stock screening tool powered by Flask backend and financial APIs.",
+      "Implemented efficient data filtering, improving query response speed by 45%."
+    ],
+  },
+],
   languages: ["Urdu (Native)", "English (Advanced)"],
   hobbies: ["Painting", "Calligraphy", "Arts & Crafts", "Novel Reading"],
   certifications: [
@@ -334,25 +327,31 @@ function buildPdfDoc(data) {
                               { text: 'Languages: ', bold: true, fontSize: 12 },
                               { text: data.technicalSkills.Languages }
                             ],
-                            margin: [0, 2]
+                            margin: [0, 5]
                           }, {
                             text: [
                               { text: 'Frameworks: ', bold: true, fontSize: 12 },
                               { text: data.technicalSkills.Frameworks }
                             ],
-                            margin: [0, 2]
+                            margin: [0, 5]
                           }, {
                             text: [
                               { text: 'Tools: ', bold: true, fontSize: 12 },
                               { text: data.technicalSkills.Tools }
                             ],
-                            margin: [0, 2]
+                            margin: [0, 5]
                           }, {
                             text: [
                               { text: 'Databases: ', bold: true, fontSize: 12 },
                               { text: data.technicalSkills.Databases }
                             ],
-                            margin: [0, 0, 2, 20]
+                            margin: [0, 5]
+                          }, {
+                            text: [
+                              { text: 'Technologies: ', bold: true, fontSize: 12 },
+                              { text: data.technicalSkills.Technologies }
+                            ],
+                            margin: [0, 0, 5, 20]
                           }
                         ],
                       },
@@ -410,7 +409,7 @@ function buildPdfDoc(data) {
                       },
                       { ul: data.languages },
                     ],
-                    margin: [15, 70, 15, 200],
+                    margin: [15, 70, 15, 132],
                     color: 'white',
                   },
                 ],
@@ -440,7 +439,7 @@ function buildPdfDoc(data) {
 
 // ---------------------- Generate PDF ----------------------
 const pdfDoc = printer.createPdfKitDocument(buildPdfDoc(resumeData));
-const pdfPath = 'resume2.pdf';
+const pdfPath = 'AnumKousarWebResume.pdf';
 pdfDoc.pipe(fs.createWriteStream(pdfPath));
 pdfDoc.end();
 
