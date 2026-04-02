@@ -29,7 +29,7 @@ const resumeData = {
     internships: [
         {
             title: "MERN Stack Intern",
-            date: "Oct 10, 2025 – Present",
+            date: "Oct 2025 – Jan 2026",
             company: "HH Tech Hub, Rawalpindi",
             details: [
                 "Collaborating with teams to develop LMS and ERP.",
@@ -110,7 +110,7 @@ const resumeData = {
     educationSummary: {
         course:
             "Data Structures, Databases, Operating Systems, Computer Networks, Machine Learning, Human Computer Interaction, Mobile Application Development",
-        gpa: "3.49 / 4.0",
+        gpa: "3.53 / 4.0",
     },
 };
 
